@@ -41,45 +41,94 @@ namespace csharp_real_estate.Models
 
     public class ForgotViewModel
     {
-        [Required]
-        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email")]
+        [Display(Name = "Địa chỉ Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Lưu đăng nhập")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email")]
+        [EmailAddress(ErrorMessage = "Địa chỉ Email không hợp lệ")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
+        [StringLength(100, ErrorMessage = "Mật khẩu phải có ít nhất 6 kí tự.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Xác nhận mật khẩu")]
+        [Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không trùng khớp.")]
         public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập họ tên")]
+        [Display(Name = "Họ tên")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
+        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
+        [Display(Name = "Số điện thoại")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
+        [Display(Name = "Địa chỉ")]
+        public string Address { get; set; }
+
+        [Display(Name = "Giới tính")]
+        public bool Gender { get; set; } = false;
+        public bool isBan { get; set; } = false;
+
+        [Display(Name = "Quyền Admin")]
+        public bool isAdmin { get; set; } = false;
     }
+    public class EditViewModel
+    {
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email")]
+        [EmailAddress(ErrorMessage = "Địa chỉ Email không hợp lệ")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập họ tên")]
+        [Display(Name = "Họ tên")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
+        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
+        [Display(Name = "Số điện thoại")]
+        public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
+        [Display(Name = "Địa chỉ")]
+        public string Address { get; set; }
+
+        [Display(Name = "Giới tính")]
+        public bool Gender { get; set; } = false;
+        public bool isBan { get; set; } = false;
+
+        [Display(Name = "Quyền Admin")]
+        public bool isAdmin { get; set; } = false;
+    }
+
 
     public class ResetPasswordViewModel
     {

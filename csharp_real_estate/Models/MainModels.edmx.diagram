@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="33d5124cacbb4d898a9ba64ba0f62388" Name="Diagram1">
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.AspNetRole" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.AspNetUserClaim" Width="1.5" PointX="12.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.AspNetUserLogin" Width="1.5" PointX="12.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.AspNetUser" Width="1.5" PointX="10" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.collection" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.collections_galery" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.contact" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.news" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.news_comment" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.product" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.products_galery" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csharp_real_estate_dbModel.subscribed" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__collectio__colle__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__collectio__colle__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__collectio__colle__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products__collec__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products__collec__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products__collec__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__news_comm__news___5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__news_comm__news___693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__news_comm__news___7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products___produ__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products___produ__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.FK__products___produ__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="csharp_real_estate_dbModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="csharp_real_estate_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isBan" Type="Boolean" Nullable="false" />
+    <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="collection">
+    <Key>
+      <PropertyRef Name="collections_id" />
+    </Key>
+    <Property Name="collections_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="collections_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="collections_slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="overview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="video" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="collections_galery" Relationship="Self.FK__collectio__colle__571DF1D5" FromRole="collections" ToRole="collections_galery" />
+    <NavigationProperty Name="collections_galery1" Relationship="Self.FK__collectio__colle__68487DD7" FromRole="collections" ToRole="collections_galery" />
+    <NavigationProperty Name="collections_galery2" Relationship="Self.FK__collectio__colle__797309D9" FromRole="collections" ToRole="collections_galery" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__collec__59063A47" FromRole="collections" ToRole="products" />
+    <NavigationProperty Name="products1" Relationship="Self.FK__products__collec__6A30C649" FromRole="collections" ToRole="products" />
+    <NavigationProperty Name="products2" Relationship="Self.FK__products__collec__7B5B524B" FromRole="collections" ToRole="products" />
+  </EntityType>
+  <EntityType Name="collections_galery">
+    <Key>
+      <PropertyRef Name="collections_galery_id" />
+    </Key>
+    <Property Name="collections_id" Type="Int32" Nullable="false" />
+    <Property Name="collections_galery_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="collection" Relationship="Self.FK__collectio__colle__571DF1D5" FromRole="collections_galery" ToRole="collections" />
+    <NavigationProperty Name="collection1" Relationship="Self.FK__collectio__colle__68487DD7" FromRole="collections_galery" ToRole="collections" />
+    <NavigationProperty Name="collection2" Relationship="Self.FK__collectio__colle__797309D9" FromRole="collections_galery" ToRole="collections" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="conMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isSeen" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="news_id" />
+    </Key>
+    <Property Name="news_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="news_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="news_slug" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="thumbnail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="viewCount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="news_comment" Relationship="Self.FK__news_comm__news___5812160E" FromRole="news" ToRole="news_comment" />
+    <NavigationProperty Name="news_comment1" Relationship="Self.FK__news_comm__news___693CA210" FromRole="news" ToRole="news_comment" />
+    <NavigationProperty Name="news_comment2" Relationship="Self.FK__news_comm__news___7A672E12" FromRole="news" ToRole="news_comment" />
+  </EntityType>
+  <EntityType Name="news_comment">
+    <Key>
+      <PropertyRef Name="news_comment_id" />
+    </Key>
+    <Property Name="news_comment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="news_id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="news" Relationship="Self.FK__news_comm__news___5812160E" FromRole="news_comment" ToRole="news" />
+    <NavigationProperty Name="news1" Relationship="Self.FK__news_comm__news___693CA210" FromRole="news_comment" ToRole="news" />
+    <NavigationProperty Name="news2" Relationship="Self.FK__news_comm__news___7A672E12" FromRole="news_comment" ToRole="news" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="products_id" />
+    </Key>
+    <Property Name="products_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="products_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="products_slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="area" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="desciption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="viewCount" Type="Int32" Nullable="false" />
+    <Property Name="isHot" Type="Boolean" Nullable="false" />
+    <Property Name="collections_id" Type="Int32" Nullable="false" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="collection" Relationship="Self.FK__products__collec__59063A47" FromRole="products" ToRole="collections" />
+    <NavigationProperty Name="collection1" Relationship="Self.FK__products__collec__6A30C649" FromRole="products" ToRole="collections" />
+    <NavigationProperty Name="collection2" Relationship="Self.FK__products__collec__7B5B524B" FromRole="products" ToRole="collections" />
+    <NavigationProperty Name="products_galery" Relationship="Self.FK__products___produ__59FA5E80" FromRole="products" ToRole="products_galery" />
+    <NavigationProperty Name="products_galery1" Relationship="Self.FK__products___produ__6B24EA82" FromRole="products" ToRole="products_galery" />
+    <NavigationProperty Name="products_galery2" Relationship="Self.FK__products___produ__7C4F7684" FromRole="products" ToRole="products_galery" />
+  </EntityType>
+  <EntityType Name="products_galery">
+    <Key>
+      <PropertyRef Name="products_galery_id" />
+    </Key>
+    <Property Name="products_galery_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="products_id" Type="Int32" Nullable="false" />
+    <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="product" Relationship="Self.FK__products___produ__59FA5E80" FromRole="products_galery" ToRole="products" />
+    <NavigationProperty Name="product1" Relationship="Self.FK__products___produ__6B24EA82" FromRole="products_galery" ToRole="products" />
+    <NavigationProperty Name="product2" Relationship="Self.FK__products___produ__7C4F7684" FromRole="products_galery" ToRole="products" />
+  </EntityType>
+  <EntityType Name="subscribed">
+    <Key>
+      <PropertyRef Name="subscribed_id" />
+    </Key>
+    <Property Name="subscribed_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__collectio__colle__571DF1D5">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="collections_galery" Type="Self.collections_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="collections_galery">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__collectio__colle__68487DD7">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="collections_galery" Type="Self.collections_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="collections_galery">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__collectio__colle__797309D9">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="collections_galery" Type="Self.collections_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="collections_galery">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__collec__59063A47">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__collec__6A30C649">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__collec__7B5B524B">
+    <End Role="collections" Type="Self.collection" Multiplicity="1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collections">
+        <PropertyRef Name="collections_id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="collections_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__news_comm__news___5812160E">
+    <End Role="news" Type="Self.news" Multiplicity="1" />
+    <End Role="news_comment" Type="Self.news_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="news">
+        <PropertyRef Name="news_id" />
+      </Principal>
+      <Dependent Role="news_comment">
+        <PropertyRef Name="news_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__news_comm__news___693CA210">
+    <End Role="news" Type="Self.news" Multiplicity="1" />
+    <End Role="news_comment" Type="Self.news_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="news">
+        <PropertyRef Name="news_id" />
+      </Principal>
+      <Dependent Role="news_comment">
+        <PropertyRef Name="news_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__news_comm__news___7A672E12">
+    <End Role="news" Type="Self.news" Multiplicity="1" />
+    <End Role="news_comment" Type="Self.news_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="news">
+        <PropertyRef Name="news_id" />
+      </Principal>
+      <Dependent Role="news_comment">
+        <PropertyRef Name="news_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products___produ__59FA5E80">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="products_galery" Type="Self.products_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="products_id" />
+      </Principal>
+      <Dependent Role="products_galery">
+        <PropertyRef Name="products_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products___produ__6B24EA82">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="products_galery" Type="Self.products_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="products_id" />
+      </Principal>
+      <Dependent Role="products_galery">
+        <PropertyRef Name="products_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products___produ__7C4F7684">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="products_galery" Type="Self.products_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="products_id" />
+      </Principal>
+      <Dependent Role="products_galery">
+        <PropertyRef Name="products_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="csharp_real_estate_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="collections" EntityType="Self.collection" />
+    <EntitySet Name="collections_galery" EntityType="Self.collections_galery" />
+    <EntitySet Name="contacts" EntityType="Self.contact" />
+    <EntitySet Name="news" EntityType="Self.news" />
+    <EntitySet Name="news_comment" EntityType="Self.news_comment" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="products_galery" EntityType="Self.products_galery" />
+    <EntitySet Name="subscribeds" EntityType="Self.subscribed" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__collectio__colle__571DF1D5" Association="Self.FK__collectio__colle__571DF1D5">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="collections_galery" EntitySet="collections_galery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__collectio__colle__68487DD7" Association="Self.FK__collectio__colle__68487DD7">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="collections_galery" EntitySet="collections_galery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__collectio__colle__797309D9" Association="Self.FK__collectio__colle__797309D9">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="collections_galery" EntitySet="collections_galery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__collec__59063A47" Association="Self.FK__products__collec__59063A47">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__collec__6A30C649" Association="Self.FK__products__collec__6A30C649">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__collec__7B5B524B" Association="Self.FK__products__collec__7B5B524B">
+      <End Role="collections" EntitySet="collections" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__news_comm__news___5812160E" Association="Self.FK__news_comm__news___5812160E">
+      <End Role="news" EntitySet="news" />
+      <End Role="news_comment" EntitySet="news_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__news_comm__news___693CA210" Association="Self.FK__news_comm__news___693CA210">
+      <End Role="news" EntitySet="news" />
+      <End Role="news_comment" EntitySet="news_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__news_comm__news___7A672E12" Association="Self.FK__news_comm__news___7A672E12">
+      <End Role="news" EntitySet="news" />
+      <End Role="news_comment" EntitySet="news_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products___produ__59FA5E80" Association="Self.FK__products___produ__59FA5E80">
+      <End Role="products" EntitySet="products" />
+      <End Role="products_galery" EntitySet="products_galery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products___produ__6B24EA82" Association="Self.FK__products___produ__6B24EA82">
+      <End Role="products" EntitySet="products" />
+      <End Role="products_galery" EntitySet="products_galery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products___produ__7C4F7684" Association="Self.FK__products___produ__7C4F7684">
+      <End Role="products" EntitySet="products" />
+      <End Role="products_galery" EntitySet="products_galery" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
