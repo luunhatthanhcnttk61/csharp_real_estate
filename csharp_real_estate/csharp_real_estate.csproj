@@ -176,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>MainModels.tt</DependentUpon>
@@ -233,6 +234,8 @@
     <Compile Include="Models\products_galery.cs">
       <DependentUpon>MainModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductViewModels.cs" />
+    <Compile Include="Models\RealEstateTypeModels.cs" />
     <Compile Include="Models\subscribed.cs">
       <DependentUpon>MainModels.tt</DependentUpon>
     </Compile>
@@ -331,6 +334,16 @@
     <Content Include="Views\Admin\Contact.cshtml" />
     <Content Include="Views\Admin\ContactDetails.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Collection\addImages.cshtml" />
+    <Content Include="Views\Collection\Category.cshtml" />
+    <Content Include="Views\Collection\CollectionItem.cshtml" />
+    <Content Include="Views\Collection\Create.cshtml" />
+    <Content Include="Views\Collection\Delete.cshtml" />
+    <Content Include="Views\Collection\DeleteImages.cshtml" />
+    <Content Include="Views\Collection\Details.cshtml" />
+    <Content Include="Views\Collection\Edit.cshtml" />
+    <Content Include="Views\Collection\Galery.cshtml" />
+    <Content Include="Views\Collection\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
