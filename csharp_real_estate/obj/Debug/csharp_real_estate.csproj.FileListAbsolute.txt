@@ -106,3 +106,7 @@ E:\LTWeb\csharp_real_estate\csharp_real_estate\obj\Debug\csharp_real_estate.cspr
 E:\LTWeb\csharp_real_estate\csharp_real_estate\obj\Debug\csharp_real_estate.csproj.CopyComplete
 E:\LTWeb\csharp_real_estate\csharp_real_estate\obj\Debug\csharp_real_estate.dll
 E:\LTWeb\csharp_real_estate\csharp_real_estate\obj\Debug\csharp_real_estate.pdb
+E:\LTWeb\csharp_real_estate\csharp_real_estate\bin\PagedList.dll
+E:\LTWeb\csharp_real_estate\csharp_real_estate\bin\PagedList.Mvc.dll
+E:\LTWeb\csharp_real_estate\csharp_real_estate\bin\PagedList.xml
+E:\LTWeb\csharp_real_estate\csharp_real_estate\bin\PagedList.Mvc.xml

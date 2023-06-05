@@ -9,11 +9,11 @@ namespace csharp_real_estate.Models
     {
         public product product { get; set; }
         public string thumb { get; set; }
-        public ProductViewModel()
+        public ProductViewModels()
         {
             // Empty Constructor
         }
-        public ProductViewModel(product product, string thumb)
+        public ProductViewModels(product product, string thumb)
         {
             this.product = product;
             this.thumb = thumb;
