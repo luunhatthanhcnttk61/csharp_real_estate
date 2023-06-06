@@ -356,6 +356,12 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Subscribed.cshtml" />
     <Content Include="Views\Home\usagePolicy.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\GetPasswordSuccess.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\UserDetails.cshtml" />
+    <Content Include="Views\User\VeryfiForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
