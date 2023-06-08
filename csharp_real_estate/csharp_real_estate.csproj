@@ -180,6 +180,7 @@
     <Compile Include="Controllers\CollectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2897,6 +2898,23 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\UserDetails.cshtml" />
     <Content Include="Views\User\VeryfiForgotPassword.cshtml" />
+    <Content Include="Views\Product\addImages.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\DeleteImages.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Galery.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\ProductItem.cshtml" />
+    <Content Include="Views\products\Create.cshtml" />
+    <Content Include="Views\products\Delete.cshtml" />
+    <Content Include="Views\products\Details.cshtml" />
+    <Content Include="Views\products\Edit.cshtml" />
+    <Content Include="Views\products\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

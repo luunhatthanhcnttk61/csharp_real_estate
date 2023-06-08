@@ -19,12 +19,40 @@ namespace csharp_real_estate
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new Bundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/Content/javascript").Include(
+                      "~/Content/Assets/Js/app.js",
+                      "~/Content/Ckeditor/ckeditor.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/site.css",
+                      "~/Content/Fontawesome/css/all.min.css"));
+
+            bundles.Add(new ScriptBundle("~/Content/admin/script").Include(
+                      "~/Content/Admin/js/jquery.min.jss",
+                      "~/Content/Admin/js/bootstrap.min.js",
+                      "~/Content/Admin/js/metisMenu.min.js",
+                      "~/Content/Admin/js/raphael.min.js",
+                      "~/Content/Admin/js/morris.min.js",
+                      "~/Content/Admin/js/morris-data.js",
+                      "~/Content/Admin/js/startmin.js"
+                      ));
+
+            bundles.Add(new StyleBundle("~/Content/admin/style").Include(
+                      "~/Content/Admin/css/bootstrap.min.css",
+                      "~/Content/Admin/css/metisMenu.min.css\"",
+                      "~/Content/Admin/css/timeline.css",
+                      "~/Content/Admin/css/startmin.css",
+                      "~/Content/Admin/css/morris.css",
+                      "~/Content/Fontawesome/css/all.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/style/css").Include(
+                      "~/Content/Assets/Css/style.css",
+                      "~/Content/Assets/Css/admin.css"));
         }
     }
 }
