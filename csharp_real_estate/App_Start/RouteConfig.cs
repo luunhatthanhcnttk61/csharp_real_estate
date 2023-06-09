@@ -131,26 +131,26 @@ namespace csharp_real_estate
                 url: "bang-dieu-khien/san-pham/thu-vien/{id}/them-anh",
                 defaults: new { controller = "Product", action = "AddImages", id = UrlParameter.Optional }
                 );
-/*
+
             routes.MapRoute(
                 name: "News manager",
                 url: "bang-dieu-khien/bai-viet",
-                defaults: new { controller = "New", action = "Index" }
+                defaults: new { controller = "News", action = "Index" }
                 );
             routes.MapRoute(
                 name: "News create",
                 url: "bang-dieu-khien/bai-viet/them-bai-viet",
-                defaults: new { controller = "New", action = "Create" }
+                defaults: new { controller = "News", action = "Create" }
                 );
             routes.MapRoute(
                 name: "News edit",
                 url: "bang-dieu-khien/bai-viet/chinh-sua/{id}",
-                defaults: new { controller = "New", action = "Edit", id = UrlParameter.Optional }
+                defaults: new { controller = "News", action = "Edit", id = UrlParameter.Optional }
                 );
             routes.MapRoute(
                 name: "News details",
                 url: "bang-dieu-khien/bai-viet/chi-tiet/{id}",
-                defaults: new { controller = "New", action = "Details", id = UrlParameter.Optional }
+                defaults: new { controller = "News", action = "Details", id = UrlParameter.Optional }
                 );
 
             routes.MapRoute(
@@ -167,20 +167,20 @@ namespace csharp_real_estate
                 name: "Users create",
                 url: "bang-dieu-khien/nguoi-dung/tao-nguoi-dung",
                 defaults: new { controller = "Account", action = "Register" }
-                );*/
+                );
 
-            /*// News config 
+            // News config 
             routes.MapRoute(
                 name: "News Category",
                 url: "tin-tuc",
-                defaults: new { controller = "New", action = "Category" }
+                defaults: new { controller = "News", action = "Category" }
                 );
 
             routes.MapRoute(
                 name: "News Post",
                 url: "tin-tuc/{slug}_{id}",
-                defaults: new { controller = "New", action = "Post", slug = (string)null, id = @"\d{1,4}" }
-                );*/
+                defaults: new { controller = "News", action = "Post", slug = (string)null, id = @"\d{1,4}" }
+                );
 
             // Product config
 
