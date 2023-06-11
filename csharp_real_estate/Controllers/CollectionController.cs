@@ -14,7 +14,7 @@ using PagedList;
 using csharp_real_estate.Models;
 using csharp_real_estate;
 
-namespace aspnet_mvc_real_estate.Controllers
+namespace csharp_real_estate.Controllers
 {
     public class CollectionController : Controller
     {

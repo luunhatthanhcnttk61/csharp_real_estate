@@ -110,7 +110,7 @@ namespace csharp_real_estate.Controllers
         [HttpPost]
         public ActionResult Search(string key, string typeSearch, string typeSort)
         {
-            // Github: thiet-ke-linh-tinh product.html
+        
             List<product> products = new List<product>();
 
             if (!string.IsNullOrEmpty(key))

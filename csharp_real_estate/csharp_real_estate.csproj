@@ -178,6 +178,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CollectionController.cs" />
+    <Compile Include="Controllers\Collections_galeryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -2923,6 +2925,16 @@
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Post.cshtml" />
+    <Content Include="Views\Collections_Galery\Create.cshtml" />
+    <Content Include="Views\Collections_Galery\Delete.cshtml" />
+    <Content Include="Views\Collections_Galery\Details.cshtml" />
+    <Content Include="Views\Collections_Galery\Edit.cshtml" />
+    <Content Include="Views\Collections_Galery\Index.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Edit.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

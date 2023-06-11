@@ -16,12 +16,12 @@ namespace csharp_real_estate
     public static class MessageHelpers
     {
         // SMTP Config here ...
-        private static string FromEmail = "skyland.0410@gmail.com";
+        private static string FromEmail = "luunhatthanha3@gmail.com";
         private static string FromName = "[Skylands] Support Team";
         private static string Host = "smtp.gmail.com";
         private static int Port = 587;
-        private static string UserName = "skyland.0410@gmail.com";
-        private static string Password = "xfqqyqzhpgcktwsx";
+        private static string UserName = "luunhatthanha3@gmail.com";
+        private static string Password = "ondsnqvgplsksgsd";
 
         // Send Email using SMTP server settings
         public static void SendEmail(EmailModels models)

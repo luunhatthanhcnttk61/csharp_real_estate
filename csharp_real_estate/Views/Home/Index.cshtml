@@ -170,7 +170,7 @@
                             <div class="item-hover"></div>
                             <img src="~/Content/Images/Post/@item.thumbnail" />
                             <div class="content-post">
-                                <div class="post-name"><a href="@Url.Action("Post", "New", new {slug = item.news_slug, id = item.news_id})">@item.news_name</a></div>
+                                <div class="post-name"><a href="@Url.Action("Post", "News", new {slug = item.news_slug, id = item.news_id})">@item.news_name</a></div>
                                 <div class="post-date"><i class="fa-solid fa-calendar-days"></i> @item.postdate</div>
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                         <div class="blog-item">
                             <img src="~/Content/Images/Post/@item.thumbnail" class="item-thumb" />
                             <div class="blog-item-content">
-                                <div class="blog-item-name"><a href="@Url.Action("Post", "New", new {slug = item.news_slug, id = item.news_id})">@item.news_name</a></div>
+                                <div class="blog-item-name"><a href="@Url.Action("Post", "News", new {slug = item.news_slug, id = item.news_id})">@item.news_name</a></div>
                                 <div class="blog-item-time"><i class="fa-solid fa-calendar-days"></i>  @item.postdate</div>
                             </div>
                         </div>

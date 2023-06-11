@@ -22,7 +22,7 @@ namespace csharp_real_estate.Controllers
     {
         private csharp_real_estate_dbEntities db = new csharp_real_estate_dbEntities();
 
-        // GET: New
+        // GET: News
         public ActionResult Index(int? page)
         {
             if (page == null || page < 1)
@@ -78,15 +78,15 @@ namespace csharp_real_estate.Controllers
                         message = message
                     });
                     db.SaveChanges();
-                    return RedirectToAction("Post", "News", new { slug = slug, id = news_id });
+                    return RedirectToAction("Post", "New", new { slug = slug, id = news_id });
                 }
             }
             catch
             {
                 TempData["ErrorMessage"] = "Vui lòng điền đầy đủ thông tin!";
-                return RedirectToAction("Post", "News", new { slug = slug, id = news_id });
+                return RedirectToAction("Post", "New", new { slug = slug, id = news_id });
             }
-            return RedirectToAction("Post", "News", new { slug = slug, id = news_id });
+            return RedirectToAction("Post", "New", new { slug = slug, id = news_id });
         }
 
         [HttpPost, ActionName("DeleteComment")]
@@ -100,7 +100,7 @@ namespace csharp_real_estate.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: New/Details/5
+        // GET: News/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -114,14 +114,14 @@ namespace csharp_real_estate.Controllers
             }
             return View(news);
         }
-
-        // GET: New/Create
+        
+        // GET: News/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: New/Create
+        // POST: News/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -147,7 +147,7 @@ namespace csharp_real_estate.Controllers
             return View(news);
         }
 
-        // GET: New/Edit/5
+        // GET: News/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -162,7 +162,7 @@ namespace csharp_real_estate.Controllers
             return View(news);
         }
 
-        // POST: New/Edit/5
+        // POST: News/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -202,7 +202,7 @@ namespace csharp_real_estate.Controllers
             return View(news);
         }
 
-        // GET: New/Delete/5
+        // GET: News/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -217,7 +217,7 @@ namespace csharp_real_estate.Controllers
             return View(news);
         }
 
-        // POST: New/Delete/5
+        // POST: News/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]

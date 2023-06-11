@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("Index", "New")">
+            <a href="@Url.Action("Index", "News")">
                 <div class="panel-footer">
                     <span class="pull-left">Xem</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -144,12 +144,12 @@
             <div class="panel-body">
                 @for (int i = 0; i < 5; i++)
                 {
-                    <a href="@Url.Action("Edit", "New", new {id = news[i].news_id})" class="list-group-item">
+                    <a href="@Url.Action("Edit", "News", new {id = news[i].news_id})" class="list-group-item">
                         <p class="admin-index_title">#@news[i].news_id @news[i].news_name</p>
                         <div class="admin-index_content">@Html.Raw(news[i].content)</div>
                     </a>
                 }
-                <a href="@Url.Action("Index", "New")" class="btn btn-default btn-block">Xem tất cả</a>
+                <a href="@Url.Action("Index", "News")" class="btn btn-default btn-block">Xem tất cả</a>
             </div>
         </div>
     </div>
